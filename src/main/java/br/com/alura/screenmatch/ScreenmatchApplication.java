@@ -17,11 +17,11 @@ public class ScreenmatchApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		var consumoApi = new ConsumoAPI();
-		var json = consumoApi.obterDados("https://jsonplaceholder.typicode.com/todos/1");
+		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=bb4d9b1e");
 		IO.println(json);
 
 		ConverteDados conversor = new ConverteDados();
 		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
-		IO.println(dados);
+		IO.println(dados+"a");
 	}
 }
